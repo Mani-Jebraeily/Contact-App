@@ -4,10 +4,10 @@ import ContactsList from './ContactsList';
 import inputs from '../../constants/inputs';
 import styles from './contacts.module.css';
 function Contacts() {
-  const [formData,setFormData]=useState({
-    username:""
-    email
-  })
+  // const [formData,setFormData]=useState({
+  //   username:""
+  //   email
+  // })
   const [contacts,setContacts]= useState([])
   const [alert,setAlert]=useState("")
   const [contact,setContact]= useState({
