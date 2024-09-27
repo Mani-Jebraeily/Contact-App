@@ -16,45 +16,18 @@ function ContactsList({contacts, deleteHandeler ,setContacts ,contact,setContact
   }
  }
 
-const groupRemoveHandeler=()=>{
-  for (let i = 0; i < contacts.length; i++){
-    if(select){
-      const selectContact=contacts.filter(contacts=>contacts.select)
-    }
-  }
-}
-
-const deleteContactHandeler=()=>{
-  for (let i = 0; i < contacts.length; i++) {
-    const newContact=contacts.filter(contacts=>contacts.select)
-    console.log(newContact[0].select)
-
-  }
-
-  if(contacts[0].select){
-
-  }
-
-  
-}
- 
-
   return (  
     <div className={styles.container}>
       <h3>Contacts List</h3>
       {contacts.length ?(
         <ul className={styles.contacts} key={96}>
           {!ShowEdit&&<>
-              <button className={styles.deletIcon} onClick={deleteContactHandeler} key="deleteGButton" >❌</button>
+              {/* <button className={styles.deletIcon} onClick={deleteContactHandeler} key="deleteGButton" >❌</button> */}
               <button className={styles.searchtIcon} onClick={searchHandeler} key="deleteGButton2">🔍</button>
               <input type="number"  className={styles.search} placeholder="Search Contacts Phone Number" key="deleteGButton4" value={search} onChange={(event)=>setSearch(event.target.value.toLowerCase().trim())}/>
               </>
           }
-      {/* <button className={styles.deletIcon} onClick={deleteContactHandeler} key="deleteGButton" >❌</button>
-      <button className={styles.searchtIcon} onClick={searchHandeler} key="deleteGButton2">🔍</button>
-      <input type="number"  className={styles.search} placeholder="Search Contacts Phone Number" key="deleteGButton4" value={search} onChange={(event)=>setSearch(event.target.value.toLowerCase().trim())}/> */}
-      {/* <input type="text"  className={styles.search} placeholder="Search Contacts"  value={search} onChange={searchHandeler}/> */}
-      
+  
         {contacts.map((contact)=>(
           <>
         <ContactItem key={contact.id} data={contact} deleteHandeler={deleteHandeler} select={select} setSelect={setSelect} setContacts={setContacts} contacts={contacts} ShowEdit={ShowEdit} setShowEdit={setShowEdit} contact={contact} setContact={setContact}/>

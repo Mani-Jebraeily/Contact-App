@@ -5,24 +5,6 @@ import EditUser from './EditUser'
 
 function ContactItem({data:{id,name,lastName,email,phoneNumber}, deleteHandeler,select,setSelect,setContacts,contacts,ShowEdit,setShowEdit,contact,setContact}) {
   const [showModal,setShowModal]=useState(false)
-  // const [ShowEdit,setShowEdit]=useState(false)
-  const selectHandeler=(event)=>{
-    setSelect((select)=>!select)
-    console.log(event.target.value)
-  }
-  const selectHandeler2=()=>{
-    setSelect((select)=>!select)
-
-    if(select){
-      for (let i = 0; i < contacts.length; i++){
-        console.log(contacts.id)
-      }
-
-    }
-    
-
-
-  }
 
    
   return (
@@ -34,7 +16,7 @@ function ContactItem({data:{id,name,lastName,email,phoneNumber}, deleteHandeler,
     :
 
            <li className={styles.item}>
-           <input type="checkbox"  value={select} onClick={selectHandeler2}/ >
+           {/* <input type="checkbox"  value={select} onClick={selectHandeler2}/ > */}
              <p>
              {name} {lastName} 
              </p>

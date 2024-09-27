@@ -134,30 +134,6 @@ function Contacts() {
         setContact={setContact}
         ShowEdit={ShowEdit}
       />
-    {/* <div className={styles.container}>
-      <div className={styles.form}>
-        {inputs.map((input,index)=>(
-        <input 
-        key={index}
-        type={input.type} 
-        placeholder={input.placeholder} 
-        name={input.name} 
-        value={contact[input.name]} 
-        onChange={changeHandler}
-        />       
-        ))}
-
-        <button onClick={addHandeler}>Add Contact</button>
-      </div>
-      <div className={styles.alert}>{alert&& <p> {alert}</p>}</div>
-      <ContactsList contacts={contacts} deleteHandeler={deleteHandeler} setContacts={setContacts} 
-        contact={contact}
-        setContacts2={setContacts2} 
-        contacts2={contacts2}
-        setShowEdit={setShowEdit}
-        ShowEdit={ShowEdit}
-      />
-    </div> */}
 
   </>
 

@@ -4,7 +4,7 @@ function Header() {
     <div className={styles.container}>
     <h1>Contact App</h1>
     <p>
-    <a href="https://github.com/Mani-Jebraeily/Contact-app">Mani Jebraeily</a> | React.js
+    <a href="https://github.com/Mani-Jebraeily/Contact-App">Mani Jebraeily</a> | React.js
 
     </p>
     
