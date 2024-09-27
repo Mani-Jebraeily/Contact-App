@@ -6,7 +6,6 @@ import Header from './assets/components/Header'
 import Contacts from './assets/components/contacts'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
     <>

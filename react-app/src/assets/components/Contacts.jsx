@@ -4,19 +4,47 @@ import ContactsList from './ContactsList';
 import inputs from '../../constants/inputs';
 import styles from './contacts.module.css';
 function Contacts() {
-  // const [formData,setFormData]=useState({
-  //   username:""
-  //   email
-  // })
-  const [contacts,setContacts]= useState([])
+  const [contacts,setContacts]= useState([
+    {
+      id:1,
+      name:"Mani",
+      lastName:"Jebraeily",
+      email:"mani.jebraeily1382@gmail.com",
+      phoneNumber:"09195595961",
+      select:false,
+
+    },
+    {
+      id:2,
+      name:"ali",
+      lastName:"karimi",
+      email:"alikarimi1393@gmail.com",
+      phoneNumber:"09105876568",
+      select:false,
+
+    },
+    {
+      id:3,
+      name:"reza",
+      lastName:"farhadi",
+      email:"reza.farhadi9@gmail.com",
+      phoneNumber:"09359501234",
+      select:false,
+
+    }
+  ])
+  const [contacts2,setContacts2]= useState([])
   const [alert,setAlert]=useState("")
+ const [ShowEdit,setShowEdit]=useState(false)
   const [contact,setContact]= useState({
     id:"",
     name:"",
     lastName:"",
     email:"",
-    phoneNumber:""
+    phoneNumber:"",
+    select:false,
   });
+
 
   const changeHandler= event=>{
     const name=event.target.name
@@ -24,7 +52,19 @@ function Contacts() {
     setContact((contact)=>({...contact,[name]: value}))
   };
   const addHandeler= ()=>{
+
+    // if(!contact.email.includes("@gmail.com")){
+    //   setAlert("Please Enter Valid Email ")
+    //   return
+    // }
     
+
+    // if(contact.phoneNumber.length!==11){
+    //   setAlert("Please enter valid phone Number!")
+    //   return
+    // }
+
+
     if(!contact.name||!contact.lastName||!contact.email||!contact.phoneNumber){
       setAlert("Please enter valid data!")
       return
@@ -38,18 +78,35 @@ function Contacts() {
       name:"",
       lastName:"",
       email:"",
-      phoneNumber:""
+      phoneNumber:"",
+     select:"false",
+
+
+    })
+
+    setContacts2((contacts2)=>[...contacts2,newContact])
+    setContact2({
+      name:"",
+      lastName:"",
+      email:"",
+      phoneNumber:"",
+      select:"false",
+
 
     })
   }
-  const deleteHandeler= id=>{
+  const deleteHandeler= (id)=>{
     const newContacts=contacts.filter((contact)=>contact.id !== id);
     setContacts(newContacts)
   }
 
+
   
   return (
-    <div className={styles.container}>
+ <>
+
+  {!ShowEdit&&
+      <div className={styles.container}>
       <div className={styles.form}>
         {inputs.map((input,index)=>(
         <input 
@@ -65,8 +122,46 @@ function Contacts() {
         <button onClick={addHandeler}>Add Contact</button>
       </div>
       <div className={styles.alert}>{alert&& <p> {alert}</p>}</div>
-      <ContactsList contacts={contacts} deleteHandeler={deleteHandeler}/>
+ 
     </div>
+  
+  }
+       <ContactsList contacts={contacts} deleteHandeler={deleteHandeler} setContacts={setContacts} 
+        contact={contact}
+        setContacts2={setContacts2} 
+        contacts2={contacts2}
+        setShowEdit={setShowEdit}
+        setContact={setContact}
+        ShowEdit={ShowEdit}
+      />
+    {/* <div className={styles.container}>
+      <div className={styles.form}>
+        {inputs.map((input,index)=>(
+        <input 
+        key={index}
+        type={input.type} 
+        placeholder={input.placeholder} 
+        name={input.name} 
+        value={contact[input.name]} 
+        onChange={changeHandler}
+        />       
+        ))}
+
+        <button onClick={addHandeler}>Add Contact</button>
+      </div>
+      <div className={styles.alert}>{alert&& <p> {alert}</p>}</div>
+      <ContactsList contacts={contacts} deleteHandeler={deleteHandeler} setContacts={setContacts} 
+        contact={contact}
+        setContacts2={setContacts2} 
+        contacts2={contacts2}
+        setShowEdit={setShowEdit}
+        ShowEdit={ShowEdit}
+      />
+    </div> */}
+
+  </>
+
+
   )
 }
 

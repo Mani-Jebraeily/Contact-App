@@ -15,6 +15,11 @@
 
  }
 
+ .item input{
+   margin-right: 15px;
+   cursor: pointer;
+ }
+
  .item span{
     display: inline-block;
     font-size: 1.3rem;
@@ -35,6 +40,7 @@
     border-radius: 50%;
     cursor: pointer;
     transition: 0.1s all ease-in-out;
+    margin: 10px;
  }
 
  .item button:hover{
