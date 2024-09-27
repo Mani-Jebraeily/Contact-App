@@ -53,16 +53,16 @@ function Contacts() {
   };
   const addHandeler= ()=>{
 
-    // if(!contact.email.includes("@gmail.com")){
-    //   setAlert("Please Enter Valid Email ")
-    //   return
-    // }
+    if(!contact.email.includes("@gmail.com")){
+      setAlert("Please Enter Valid Email ")
+      return
+    }
     
 
-    // if(contact.phoneNumber.length!==11){
-    //   setAlert("Please enter valid phone Number!")
-    //   return
-    // }
+    if(contact.phoneNumber.length!==11){
+      setAlert("Please enter valid phone Number!")
+      return
+    }
 
 
     if(!contact.name||!contact.lastName||!contact.email||!contact.phoneNumber){
